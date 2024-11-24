@@ -1,0 +1,29 @@
+Chạy lệnh sau để khởi động Zookeeper:
+bin\windows\zookeeper-server-start.bat config\zookeeper.properties
+
+Chạy lệnh sau để khởi động Kafka Broker:
+bin\windows\kafka-server-start.bat config\server.properties
+
+-----
+
+Tạo topic:
+bin\windows\kafka-topics.bat --create --topic example-topic --bootstrap-server localhost:9092 --partitions 1 --replication-factor 1
+
+
+Kiểm tra danh sách topic:
+bin\windows\kafka-topics.bat --list --bootstrap-server localhost:9092
+
+
+Gửi tin nhắn với Kafka Producer:
+bin\windows\kafka-console-producer.bat --topic example-topic --bootstrap-server localhost:9092
+
+
+Nhận tin nhắn với Kafka Consumer:
+bin\windows\kafka-console-consumer.bat --topic example-topic --bootstrap-server localhost:9092 --from-beginning
+
+-----
+
+npm install -D @playwright/test@latest
+
+npx playwright install --with-deps
+
